@@ -1,19 +1,22 @@
-# Ollama tool-calling bundle
+# Ollama toolbox
 
-This bundle provides a simple way to run Ollama with a tool-capable model on a workstation.
+This package is ready for direct use on macOS without Docker.
 
-## Included
-- Ollama container image build instructions
-- A model pull script for a compact tool-friendly model
-- A small run script
+## What you get
+- `install.sh` installs Ollama with Homebrew
+- `scripts/start-ollama.sh` starts Ollama and downloads a model
+- `scripts/test-tool-calling.sh` sends a simple chat request to the local API
 
-## Recommended model
-The default example uses `qwen2.5:7b-instruct`.
-
-## Build and use
+## Quick start
 
 ```bash
-chmod +x build.sh run.sh
-./build.sh
-./run.sh
+chmod +x install.sh scripts/start-ollama.sh scripts/test-tool-calling.sh
+./install.sh
+./scripts/start-ollama.sh
+./scripts/test-tool-calling.sh
 ```
+
+## Notes
+- The default model is `qwen2.5:7b-instruct`
+- Tool calling works through your client application by sending tool definitions to the local Ollama API
+
