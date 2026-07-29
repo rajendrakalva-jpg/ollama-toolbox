@@ -1,22 +1,29 @@
 # Ollama toolbox
 
-This package is ready for direct use on macOS without Docker.
+This package is designed for a restricted workstation that cannot reach public Ollama sites.
 
-## What you get
-- `install.sh` installs Ollama with Homebrew
-- `scripts/start-ollama.sh` starts Ollama and downloads a model
-- `scripts/test-tool-calling.sh` sends a simple chat request to the local API
+## Offline-first workflow
+1. Copy your pre-downloaded Ollama binary and model files into the offline folder.
+2. Run the offline installer to place them into the local Ollama home directory.
+3. Start Ollama locally without contacting the public network.
 
-## Quick start
+## Files
+- `install.sh` installs Ollama with Homebrew for a standard machine
+- `offline/install-offline.sh` copies bundled local assets into `~/.ollama`
+- `offline/start-offline.sh` starts the bundled Ollama binary locally
+- `scripts/test-tool-calling.sh` sends a simple local API request
+
+## Quick start on a restricted workstation
 
 ```bash
-chmod +x install.sh scripts/start-ollama.sh scripts/test-tool-calling.sh
-./install.sh
-./scripts/start-ollama.sh
+chmod +x offline/install-offline.sh offline/start-offline.sh scripts/test-tool-calling.sh
+./offline/install-offline.sh
+./offline/start-offline.sh
 ./scripts/test-tool-calling.sh
 ```
 
 ## Notes
-- The default model is `qwen2.5:7b-instruct`
-- Tool calling works through your client application by sending tool definitions to the local Ollama API
+- Put the real Ollama binary under `offline/bin/ollama`
+- Put the model files under `offline/models/`
+- This approach avoids public downloads and works entirely from the packaged local files
 
