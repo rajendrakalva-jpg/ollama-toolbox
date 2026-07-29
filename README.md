@@ -24,6 +24,6 @@ chmod +x offline/install-offline.sh offline/start-offline.sh scripts/test-tool-c
 
 ## Notes
 - Put the real Ollama binary under `offline/bin/ollama`
-- Put the model files under `offline/models/`
+- Put the model files for `qwen2.5:7b-instruct` under `offline/models/`
 - This approach avoids public downloads and works entirely from the packaged local files
 
