@@ -8,6 +8,8 @@ This package is designed for a restricted workstation that cannot reach public O
 3. Copy the bundle to the workstation and install it locally.
 4. Start Ollama without contacting the public network.
 
+> The repository does not contain the actual model weights. The model must be supplied separately from an approved local source because the weights are too large to store in GitHub.
+
 ## Files
 - `install.sh` installs Ollama with Homebrew for a standard machine
 - `offline-bundle/install-large.sh` copies bundled local assets into `~/.ollama`
