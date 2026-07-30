@@ -1,0 +1,5 @@
+model_name=qwen2.5:7b-instruct
+expected_dir=offline-bundle/models/qwen2.5:7b-instruct
+expected_min_files=1
+expected_min_bytes=1000000000
+notes=Place the local 7B model weights in this directory before starting Ollama.
